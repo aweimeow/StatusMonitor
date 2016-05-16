@@ -5,6 +5,8 @@ from core.token import load_token
 from core.system import getIP
 import lib.cpu
 import lib.memory
+import lib.disk
+
 
 app = Flask('statuslook')
 HOST = getIP('eth0')
@@ -22,6 +24,11 @@ def cpu(func):
 @app.route('/%s/memory/<func>' % TOKEN)
 def memory(func):
     result = getattr(lib.memory, func)()
+    return Response(json.dumps(result), mimetype='application/json')
+
+@app.route('/%s/disk/<func>' % TOKEN)
+def disk(func):
+    result = getattr(lib.disk, func)()
     return Response(json.dumps(result), mimetype='application/json')
 
 
