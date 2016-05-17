@@ -1,5 +1,5 @@
-#### What's statuslook
-statuslook is a Flask, psutil based project to create a web server for getting system info (CPU, memory, disk, network state, ...)
+#### What's StatusMonitor
+StatusMonitor is a Flask, psutil based project to create a web server for getting system info (CPU, memory, disk, network state, ...)
 
 #### Quick Start
 Before start, you have to install flask and psutil first.
@@ -9,7 +9,7 @@ pip install psutil
 ```
 And clone this project
 ```sh
-git clone https://github.com/aweimeow/statuslook.git
+git clone https://github.com/aweimeow/StatusMonitor.git
 ```
 After you clone this project, you can start it easily by following command
 ```sh
@@ -17,7 +17,7 @@ python main.py
 ```
 It will print token like following,  
 if you want to assign token by yourself,  
-you can assign token in `statuslook/token`  
+you can assign token in `StatusMonitor/token`  
 and if you dont want to assign token, it will generate a token randomly for you
 ```sh
 TOKEN: f4360d606e675e0f29ea45f0a3202a73
