@@ -6,6 +6,7 @@ from core.system import getIP
 import lib.cpu
 import lib.memory
 import lib.disk
+import lib.network
 
 
 app = Flask('statuslook')
@@ -29,6 +30,11 @@ def memory(func):
 @app.route('/%s/disk/<func>' % TOKEN)
 def disk(func):
     result = getattr(lib.disk, func)()
+    return Response(json.dumps(result), mimetype='application/json')
+
+@app.route('/%s/network/<func>' % TOKEN)
+def network(func):
+    result = getattr(lib.network, func)()
     return Response(json.dumps(result), mimetype='application/json')
 
 
